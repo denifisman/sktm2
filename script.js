@@ -74,7 +74,7 @@ function generatePDF() {
         doc.text(`Pekerjaan Ayah: ${document.getElementById("pekerjaanAyahSurat").innerText}`, 10, 180);
         doc.text(`Alamat Ayah: Desa Mamulusan, Kecamatan Liang, Kabupaten Banggai Kepulauan.`, 10, 190);
         doc.text(`Nama Ibu: ${document.getElementById("namaIbuSurat").innerText}`, 10, 200);
-        doc.text(`Tempat/Tanggal Lahir Ibu: ${document.getElementById("tempatTanggalLahirIbuSurat").innerText}`, 10, 210);
+        doc.text(`Tempat/Tanggal Lahir Ibu: Mamulusan, 25 Juni 1974`, 10, 210);
         doc.text(`Jenis Kelamin Ibu: ${document.getElementById("jenisKelaminIbuSurat").innerText}`, 10, 220);
         doc.text(`Agama Ibu: ${document.getElementById("agamaIbuSurat").innerText}`, 10, 230);
         doc.text(`Pekerjaan Ibu: ${document.getElementById("pekerjaanIbuSurat").innerText}`, 10, 240);
