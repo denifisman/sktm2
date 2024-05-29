@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surat Keterangan Tidak Mampu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Formulir Surat Keterangan Tidak Mampu</h1>
+    <form id="form">
+        <label for="namaAnak">Nama Anak:</label>
+        <input type="text" id="namaAnak" required><br>
+        <label for="namaAyah">Nama Ayah:</label>
+        <input type="text" id="namaAyah" required><br>
+        <label for="tempatTanggalLahirAyah">Tempat/Tanggal Lahir Ayah:</label>
+        <input type="text" id="tempatTanggalLahirAyah" required><br>
+        <label for="jenisKelaminAyah">Jenis Kelamin Ayah:</label>
+        <input type="text" id="jenisKelaminAyah" required><br>
+        <label for="agamaAyah">Agama Ayah:</label>
+        <input type="text" id="agamaAyah" required><br>
+        <label for="pekerjaanAyah">Pekerjaan Ayah:</label>
+        <input type="text" id="pekerjaanAyah" required><br>
+        
+        <label for="namaIbu">Nama Ibu:</label>
+        <input type="text" id="namaIbu" required><br>
+        <label for="tempatTanggalLahirIbu">Tempat/Tanggal Lahir Ibu:</label>
+        <input type="text" id="tempatTanggalLahirIbu" required><br>
+        <label for="jenisKelaminIbu">Jenis Kelamin Ibu:</label>
+        <input type="text" id="jenisKelaminIbu" required><br>
+        <label for="agamaIbu">Agama Ibu:</label>
+        <input type="text" id="agamaIbu" required><br>
+        <label for="pekerjaanIbu">Pekerjaan Ibu:</label>
+        <input type="text" id="pekerjaanIbu" required><br>
+        
+        <button type="button" onclick="generateSurat()">Cetak Surat</button>
+    </form>
+
+    <div id="surat" style="display:none;">
+        <div class="kop-surat">
+            <img src="logo.png" alt="Logo Desa" class="logo">
+            <div class="kop-text">
+                <h2>PEMERINTAH KABUPATEN BANGGAI KEPULAUAN</h2>
+                <h3>KECAMATAN LIANG DESA MAMULUSAN</h3>
+                <p>A OBULUSAN NO 66 MAMULUSAN KODE POS 94783</p>
+            </div>
+        </div>
+        <hr>
+        <h2 class="title">SURAT KETERANGAN TIDAK MAMPU</h2>
+        <p>Nomor: 140/354/PEMDES-MLS/IV/2022</p>
+        <p>Yang bertanda tangan di bawah ini:</p>
+        <p>Nama: LISNAWATI TABUPOK, S.Pd.K</p>
+        <p>Jabatan: Kepala Desa</p>
+        <p>Alamat: Desa Mamulusan, Kecamatan Liang, Kabupaten Banggai Kepulauan.</p>
+        <p>Menerangkan dengan sebenarnya bahwa :</p>
+        <p>Nama Ayah: <span id="namaAyahSurat"></span></p>
+        <p>Tempat/Tanggal Lahir Ayah: <span id="tempatTanggalLahirAyahSurat"></span></p>
+        <p>Jenis Kelamin Ayah: <span id="jenisKelaminAyahSurat"></span></p>
+        <p>Agama Ayah: <span id="agamaAyahSurat"></span></p>
+        <p>Pekerjaan Ayah: <span id="pekerjaanAyahSurat"></span></p>
+        <p>Alamat Ayah: Desa Mamulusan, Kecamatan Liang, Kabupaten Banggai Kepulauan.</p>
+        <p>Nama Ibu: <span id="namaIbuSurat"></span></p>
+        <p>Tempat/Tanggal Lahir Ibu: Mamulusan, 25 Juni 1974</p>
+        <p>Jenis Kelamin Ibu: <span id="jenisKelaminIbuSurat"></span></p>
+        <p>Agama Ibu: <span id="agamaIbuSurat"></span></p>
+        <p>Pekerjaan Ibu: <span id="pekerjaanIbuSurat"></span></p>
+        <p>Alamat Ibu: Desa Mamulusan, Kecamatan Liang, Kabupaten Banggai Kepulauan.</p>
+        <p>Bahwa yang bersangkutan tersebut diatas adalah benar orang tua dari <span id="namaAnakSurat"></span> yang Berpenghasilan Rendah (Ekonomi Lemah).</p>
+        <p>Demikian surat keterangan ini, dibuat dengan benar diberikan kepada yang bersangkutan, untuk dipergunakan dimana perlunya.</p>
+        <br><br>
+        <p>Mengetahui</p>
+        <p>CAMAT LIANG</p>
+        <p>IRENODRATA ONENG, SH</p>
+        <p>NIP. 19730817 200604 1 027</p>
+        <br><br>
+        <p>Mamulusan, <span id="tanggalSurat"></span></p>
+        <p>KEPALA DESA MAMULUSAN</p>
+        <br><br><br><br>
+        <p>LISNAWATI TABUPOK, S.Pd.K</p>
+        <button onclick="printSurat()">Cetak</button>
+        <button onclick="generatePDF()">Cetak ke PDF</button>
+    </div>
+
+    <!-- Menyertakan jsPDF dari CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
